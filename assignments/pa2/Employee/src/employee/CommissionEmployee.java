@@ -5,11 +5,11 @@ package employee;
  * @author Mindy Tomlinson (ast121@psu.edu)
  */
 public class CommissionEmployee {
-    protected final String firstName;
-    protected final String lastName;
-    protected final String socialSecurityNumber;
-    protected double grossSales; // gross weekly sales
-    protected double commissionRate; // commission percentage
+    private final String firstName;
+    private final String lastName;
+    private final String socialSecurityNumber;
+    private double grossSales; // gross weekly sales
+    private double commissionRate; // commission percentage
 
     public CommissionEmployee(
             String firstName, 
@@ -77,26 +77,14 @@ public class CommissionEmployee {
     @Override
     public String toString() {
         return String.format(
-                "%s: %s %s%n"
-                + "%s: %s%n"
-                + "%s: %.2f%n"
-                + "%s: %.2f%n"
-                + "%s: %.2f", 
-                "commission employee", firstName, lastName, 
-                "social security number", socialSecurityNumber,
-                "gross sales", grossSales, 
-                "commission rate", commissionRate,
-                "earnings", earnings());
+                "%s: %s %s with ssn: %s%n"
+                + "  %s: %.2f%n"
+                + "  %s: %.2f%n"
+                + "  %s: $%.2f", 
+                "Commissioned Employee", 
+                    getFirstName(), getLastName(), getSocialSecurityNumber(),
+                "Gross Sales", getGrossSales(), 
+                "Commission Rate", getCommissionRate(),
+                "Earnings", earnings());
     }
-    
-    public static void main(String[] args) {
-        CommissionEmployee mindy = new CommissionEmployee("Mindy","Tomlinson",
-                "999-99-9999", 100000.0, 0.2);
-        System.out.println(mindy);
-        
-        BasePlusCommissionEmployee amber = new BasePlusCommissionEmployee(
-                "Amber","Miller","888-88-8888",50000,0.3,80000);
-        System.out.println(amber);
-    }
-    
 }
