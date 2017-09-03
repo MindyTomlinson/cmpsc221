@@ -80,7 +80,7 @@ public class CommissionEmployee {
                 "%s: %s %s with ssn: %s%n"
                 + "  %s: %.2f%n"
                 + "  %s: %.2f%n"
-                + "  %s: $%.2f", 
+                + "  %s: $%.2f%n", 
                 "Commissioned Employee", 
                     getFirstName(), getLastName(), getSocialSecurityNumber(),
                 "Gross Sales", getGrossSales(), 
