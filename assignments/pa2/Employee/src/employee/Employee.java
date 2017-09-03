@@ -15,9 +15,17 @@ public class Employee {
         this.lastName = lastName;
         this.socialSecurityNumber = socialSecurityNumber;
     }
-    
-    public double earnings() {
-        return 0.0;
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public String getSocialSecurityNumber() {
+        return socialSecurityNumber;
     }
     
     @Override
