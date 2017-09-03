@@ -4,19 +4,18 @@ package employee;
  *
  * @author Mindy Tomlinson (ast121@psu.edu)
  */
-public class CommissionEmployee {
-    private final String firstName;
-    private final String lastName;
-    private final String socialSecurityNumber;
+public class CommissionEmployee extends Employee {
     private double grossSales; // gross weekly sales
     private double commissionRate; // commission percentage
 
     public CommissionEmployee(
             String firstName, 
-            String lastName, 
-            String socialSecurityNumber, 
+            String lastName,
+            String socialSecurityNumber,
             double grossSales, 
             double commissionRate) {
+        
+        super(firstName, lastName, socialSecurityNumber);
         
         // validate grossSales
         if (grossSales < 0.0) 
@@ -28,23 +27,8 @@ public class CommissionEmployee {
             throw new IllegalArgumentException(
                     "Commission rate must be between 0 and 1");
         
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.socialSecurityNumber = socialSecurityNumber;
         this.grossSales = grossSales;
         this.commissionRate = commissionRate;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public String getSocialSecurityNumber() {
-        return socialSecurityNumber;
     }
 
     public double getGrossSales() {
@@ -77,12 +61,11 @@ public class CommissionEmployee {
     @Override
     public String toString() {
         return String.format(
-                "%s: %s %s with ssn: %s%n"
+                "%s"
                 + "  %s: %.2f%n"
                 + "  %s: %.2f%n"
                 + "  %s: $%.2f%n", 
-                "Commissioned Employee", 
-                    getFirstName(), getLastName(), getSocialSecurityNumber(),
+                super.toString(),
                 "Gross Sales", getGrossSales(), 
                 "Commission Rate", getCommissionRate(),
                 "Earnings", earnings());

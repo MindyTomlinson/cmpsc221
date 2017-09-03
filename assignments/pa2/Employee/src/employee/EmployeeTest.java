@@ -8,7 +8,6 @@ public class EmployeeTest {
     public static void main(String[] args) {
         
         Employee mindy = new Employee("Mindy", "Tomlinson", "999-99-9999");
-        
         System.out.println(mindy);
         
         CommissionEmployee amber = new CommissionEmployee("Amber","Miller",
