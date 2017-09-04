@@ -31,7 +31,7 @@ public class Employee {
     @Override
     public String toString() {
         return String.format(
-              "%s: %s %s with ssn: %s%n",
-                "Employee", firstName, lastName, socialSecurityNumber);
+              "Employee: %s %s with ssn: %s%n",
+                firstName, lastName, socialSecurityNumber);
     }
 }

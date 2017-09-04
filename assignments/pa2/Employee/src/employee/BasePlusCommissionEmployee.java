@@ -40,22 +40,21 @@ public class BasePlusCommissionEmployee extends CommissionEmployee {
     @Override
     public double earnings() {
         
-        return baseSalary + (getGrossSales() * getCommissionRate());
+        return baseSalary + super.earnings();
     }
 
     @Override
     public String toString() {
         return String.format(
-                "%s: %s %s with ssn: %s%n"
-                + "  %s: %.2f%n"
-                + "  %s: %.2f%n"
-                + "  %s: $%.2f%n"
-                + "  %s: $%.2f%n", 
-                "Base Salary Plus Commissioned Employee", 
-                    getFirstName(), getLastName(), getSocialSecurityNumber(),
-                "Gross Sales", getGrossSales(), 
-                "Commission Rate", getCommissionRate(),
-                "with Base Salary of", getBaseSalary(),
-                "Earnings", earnings());
+                "Base Salary Plus Commissioned Employee: %s %s with ssn: %s%n"
+                + "  Gross Sales: %.2f%n"
+                + "  Commission Rate: %.2f%n"
+                + "  with Base Salary of: $%.2f%n"
+                + "  Earnings: $%.2f%n",  
+                getFirstName(), getLastName(), getSocialSecurityNumber(),
+                getGrossSales(), 
+                getCommissionRate(),
+                getBaseSalary(),
+                earnings());
     }
 }
