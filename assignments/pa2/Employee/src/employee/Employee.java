@@ -29,6 +29,11 @@ public abstract class Employee {
         return socialSecurityNumber;
     }
     
+    protected String displayName() {
+        return String.format("%s %s with ssn: %s",
+                firstName, lastName, socialSecurityNumber);
+    }
+    
     @Override
     public abstract String toString();
     

@@ -46,12 +46,12 @@ public class BasePlusCommissionEmployee extends CommissionEmployee {
     @Override
     public String toString() {
         return String.format(
-                "Base Salary Plus Commissioned Employee: %s %s with ssn: %s%n"
+                "Base Salary Plus Commissioned Employee: %s%n"
                 + "  Gross Sales: %.2f%n"
                 + "  Commission Rate: %.2f%n"
                 + "  with Base Salary of: $%.2f%n"
                 + "  Earnings: $%.2f%n",  
-                getFirstName(), getLastName(), getSocialSecurityNumber(),
+                displayName(),
                 getGrossSales(), 
                 getCommissionRate(),
                 getBaseSalary(),

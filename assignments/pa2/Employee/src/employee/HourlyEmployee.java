@@ -60,11 +60,11 @@ public class HourlyEmployee extends Employee {
     @Override
     public String toString() {
         return String.format(
-                "Hourly Employee: %s %s with ssn: %s%n"
+                "Hourly Employee: %s%n"
                 + "  Hourly Wage: %.2f%n"
                 + "  Hours Worked: %.2f%n"
                 + "  Earnings: $%.2f%n",  
-                getFirstName(), getLastName(), getSocialSecurityNumber(),
+                displayName(),
                 getHourlyWage(), 
                 getHoursWorked(),
                 earnings());

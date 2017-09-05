@@ -41,10 +41,10 @@ public class SalariedEmployee extends Employee {
     @Override
     public String toString() {
         return String.format(
-                "Salaried Employee: %s %s with ssn: %s%n"
+                "Salaried Employee: %s%n"
                 + "  Salary: %.2f%n"
                 + "  Earnings: $%.2f%n",  
-                getFirstName(), getLastName(), getSocialSecurityNumber(),
+                displayName(),
                 getSalary(), 
                 earnings());
     }
