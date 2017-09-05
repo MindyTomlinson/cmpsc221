@@ -4,11 +4,12 @@ package employee;
  *
  * @author Mindy Tomlinson (ast121@psu.edu)
  */
-public class Employee {
+public abstract class Employee {
     
     private final String firstName;
     private final String lastName;
     private final String socialSecurityNumber;
+    
 
     public Employee(String firstName, String lastName, String socialSecurityNumber) {
         this.firstName = firstName;
@@ -34,4 +35,6 @@ public class Employee {
               "Employee: %s %s with ssn: %s%n",
                 firstName, lastName, socialSecurityNumber);
     }
+    
+    public abstract double earnings();
 }

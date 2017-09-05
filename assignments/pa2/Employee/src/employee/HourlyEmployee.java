@@ -6,6 +6,7 @@ package employee;
  */
 public class HourlyEmployee extends Employee {
 
+    private static final String DESCRIPTION = "Hourly Employee";
     private double hourlyWage;
     private double hoursWorked;
 
