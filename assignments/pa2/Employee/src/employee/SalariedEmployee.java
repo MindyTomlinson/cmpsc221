@@ -34,6 +34,7 @@ public class SalariedEmployee extends Employee {
         this.salary = salary;
     }
 
+    @Override
     public double earnings() {
         return salary;
     }

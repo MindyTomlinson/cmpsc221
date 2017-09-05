@@ -51,9 +51,10 @@ public class HourlyEmployee extends Employee {
         this.hoursWorked = hoursWorked;
     }
     
+    @Override
     public double earnings() {
         return (hoursWorked > 40.0 ? 
-                (hoursWorked - 40) * hourlyWage * 1.5 + 40 * hourlyWage: 
+                (hoursWorked - 40) * hourlyWage * 1.5 + 40 * hourlyWage : 
                 hoursWorked * hourlyWage);
     }
     
