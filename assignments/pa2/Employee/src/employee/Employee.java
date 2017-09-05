@@ -30,11 +30,7 @@ public abstract class Employee {
     }
     
     @Override
-    public String toString() {
-        return String.format(
-              "Employee: %s %s with ssn: %s%n",
-                firstName, lastName, socialSecurityNumber);
-    }
+    public abstract String toString();
     
     public abstract double earnings();
 }
