@@ -46,5 +46,14 @@ public class EmployeeTest {
         BasePlusCommissionedEmployee sue = new BasePlusCommissionedEmployee(
             "Sue", "Smith", "222-22-2222", salary1, comm1);
         System.out.println(sue);
+        
+        // If salary1 is updated, is Sue's BasePlusCommissionedEmployee changed?
+        salary1.setSalary(80000);
+        System.out.println(sue); 
+        // YES if salary is initialized in BasePlusCommissionedEmployee's 
+        // constructor via this.salary = salary
+        // NO if salary is initialized in BasePlusCommissionedEmployee's
+        // constructor via this.salary = new Salary(salary)
+        // (assuming there's a constructor with that signature for Salary)
     }
 }

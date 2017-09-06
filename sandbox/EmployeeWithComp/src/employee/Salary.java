@@ -6,33 +6,37 @@ package employee;
  */
 public class Salary implements Renumeration {
     
-    private double weeklySalary;
+    private double salary;
 
-    public Salary(double salary) {
+    public Salary(double salary) { 
         if (salary < 0.0)
             throw new IllegalArgumentException("Salary must be >= 0.0");
-        this.weeklySalary = salary;
+        this.salary = salary;
+    }
+    
+    public Salary(Salary salary) { // constructor using another Salary object
+        this(salary.getSalary());
     }
 
-    public double getWeeklySalary() {
-        return weeklySalary;
+    public double getSalary() {
+        return salary;
     }
 
-    public void setWeeklySalary(double weeklySalary) {
-        if (weeklySalary < 0.0)
+    public void setSalary(double salary) {
+        if (salary < 0.0)
             throw new IllegalArgumentException("Salary must be >= 0.0");
-        this.weeklySalary = weeklySalary;
+        this.salary = salary;
     }
     
     @Override
     public double pay() {
-        return weeklySalary;
+        return salary;
     }
 
     @Override
     public String toString() {
         return String.format("Salary: $%.2f%n",
-                weeklySalary);
+                salary);
     }
 
     void setWeeklySalary(Salary salary) {

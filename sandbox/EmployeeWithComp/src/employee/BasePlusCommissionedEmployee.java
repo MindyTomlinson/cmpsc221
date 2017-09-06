@@ -12,8 +12,8 @@ public class BasePlusCommissionedEmployee extends Employee {
     public BasePlusCommissionedEmployee(String firstName, String lastName, String ssn,
                                         Salary salary, Commission commission) {
         super(firstName, lastName, ssn);
-        this.salary = salary;
-        this.commission = commission;
+        this.salary = new Salary(salary);
+        this.commission = new Commission(commission);
     }
 
     public Salary getSalary() {
@@ -21,7 +21,7 @@ public class BasePlusCommissionedEmployee extends Employee {
     }
 
     public void setSalary(Salary salary) {
-        this.salary = salary;
+        this.salary = new Salary(salary);
     }
 
     public Commission getCommission() {
@@ -29,7 +29,7 @@ public class BasePlusCommissionedEmployee extends Employee {
     }
 
     public void setCommission(Commission commission) {
-        this.commission = commission;
+        this.commission = new Commission(commission);
     }
     
     @Override

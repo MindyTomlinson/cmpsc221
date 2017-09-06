@@ -18,6 +18,10 @@ public class Commission implements Renumeration {
         this.grossSales = grossSales;
         this.commissionRate = commissionRate;
     }
+    
+    public Commission(Commission commission) {
+        this(commission.getGrossSales(), commission.getCommissionRate());
+    }
 
     public double getGrossSales() {
         return grossSales;
