@@ -29,7 +29,7 @@ public abstract class Employee {
         return socialSecurityNumber;
     }
     
-    protected String displayName() {
+    public String displayName() {
         return String.format("%s %s with ssn: %s",
                 firstName, lastName, socialSecurityNumber);
     }
