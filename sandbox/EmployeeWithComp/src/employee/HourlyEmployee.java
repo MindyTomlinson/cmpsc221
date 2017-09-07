@@ -1,5 +1,7 @@
 package employee;
 
+import renumeration.HourlyWage;
+
 /**
  *
  * @author Mindy Tomlinson (ast121@psu.edu)

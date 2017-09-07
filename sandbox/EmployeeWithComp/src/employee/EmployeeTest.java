@@ -1,5 +1,9 @@
 package employee;
 
+import renumeration.Salary;
+import renumeration.HourlyWage;
+import renumeration.Commission;
+
 /**
  *
  * @author Mindy Tomlinson (ast121@psu.edu)

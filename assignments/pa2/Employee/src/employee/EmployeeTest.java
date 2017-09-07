@@ -7,29 +7,12 @@ package employee;
 public class EmployeeTest {
     public static void main(String[] args) {
         
-//     Can't instantiate abstract class
-//        Employee mindy = new Employee("Mindy", "Tomlinson", "999-99-9999");
-//        System.out.println(mindy);
-        
-        CommissionEmployee amber = new CommissionEmployee("Amber","Miller",
-                "888-88-8888", 2000.0, 0.05);
-        System.out.println(amber);
-        
-        BasePlusCommissionEmployee shana = new BasePlusCommissionEmployee(
-                "Shana","Nissenbaum","777-77-7777", 3000, 0.05, 300);
-        System.out.println(shana);
-        
-        SalariedEmployee julie = new SalariedEmployee("Julie", "Trubitt", 
-                "666-66-6666", 1150);
-        System.out.println(julie);
-        
-        HourlyEmployee maggie = new HourlyEmployee("Maggie","Thomas",
-                "555-55-5555", 15, 50);
-        System.out.println(maggie);
-        
-        HourlyEmployee marissa = new HourlyEmployee("Marissa", "Rodriguez",
-                "444-44-4444", 20, 40);
-        System.out.println(marissa);
+        CommissionEmployee employee1 = new CommissionEmployee("Fred", "Jones", "111-11-1111", 2000.0, .05);
+        BasePlusCommissionEmployee employee2 = new BasePlusCommissionEmployee("Sue", "Smith", "222-22-2222", 3000.0, .05, 300);
+        SalariedEmployee employee3 = new SalariedEmployee("Sha", "Yang", "333-33-3333", 1150.0);
+        HourlyEmployee employee4 = new HourlyEmployee("Ian", "Tanning", "444-44-4444", 15.0, 50);
+        HourlyEmployee employee5 = new HourlyEmployee("Angela", "Domchek", "555-55-5555", 20.0, 40);
+        System.out.printf("%s%s%s%s%s", employee1, employee2, employee3, employee4, employee5);
     }
     
 }

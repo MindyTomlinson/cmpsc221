@@ -10,7 +10,6 @@ public abstract class Employee {
     private final String lastName;
     private final String socialSecurityNumber;
     
-
     public Employee(String firstName, String lastName, String socialSecurityNumber) {
         this.firstName = firstName;
         this.lastName = lastName;

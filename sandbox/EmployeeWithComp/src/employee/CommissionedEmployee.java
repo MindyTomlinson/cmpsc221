@@ -1,5 +1,7 @@
 package employee;
 
+import renumeration.Commission;
+
 /**
  *
  * @author Mindy Tomlinson (ast121@psu.edu)
