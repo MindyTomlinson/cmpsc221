@@ -31,7 +31,9 @@ public class EmployeeTest {
         System.out.println(ian);
         
         CommissionedEmployee fred1 = new CommissionedEmployee("Fred", "Jones",
-                                        "111-11-1111", 2000, 0.05);
+                                        "111-11-1111", 
+                                        new Commission(2000, 0.05));
+        
         CommissionedEmployee fred2 = new CommissionedEmployee("Fred", "Jones",
                                         "111-11-1111", comm1);
         System.out.println("Constructor with gross sales & commission rate:");

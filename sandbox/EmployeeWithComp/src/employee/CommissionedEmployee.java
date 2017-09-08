@@ -11,16 +11,6 @@ public class CommissionedEmployee extends Employee {
     private Commission commission;
 
     public CommissionedEmployee(String firstName, String lastName, String ssn,
-            double grossSales, double commissionRate) {
-        
-        super(firstName, lastName, ssn);
-        
-        // Create new Commission object with arguments 
-        // grossSales and commissionRate
-        this.commission = new Commission(grossSales, commissionRate);
-    }
-
-    public CommissionedEmployee(String firstName, String lastName, String ssn,
             Commission commission) {
         
         super(firstName, lastName, ssn);

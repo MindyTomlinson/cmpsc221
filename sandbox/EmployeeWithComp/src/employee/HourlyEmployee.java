@@ -14,9 +14,7 @@ public class HourlyEmployee extends Employee {
             HourlyWage hourlyWage) {
         super(firstName, lastName, ssn);
         this.hourlyWage = hourlyWage;
-    }
-
-    
+    } 
 
     public HourlyWage getHourlyWage() {
         return hourlyWage;

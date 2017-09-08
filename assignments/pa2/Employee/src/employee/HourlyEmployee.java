@@ -23,8 +23,9 @@ public class HourlyEmployee extends Employee {
             throw new IllegalArgumentException("Hourly wage must be > 0.0");
         
         // validate hoursWorked
-        if (hoursWorked < 0.0) 
-            throw new IllegalArgumentException("Hours worked must be >= 0.0");
+        if (hoursWorked < 0.0 || hoursWorked > 168.0) 
+            throw new IllegalArgumentException(
+                    "Hours worked must be between 0.0 and 168.0");
         
         this.hourlyWage = hourlyWage;
         this.hoursWorked = hoursWorked;
@@ -45,8 +46,9 @@ public class HourlyEmployee extends Employee {
     }
 
     public void setHoursWorked(double hoursWorked) {
-        if (hoursWorked < 0.0) 
-            throw new IllegalArgumentException("Hours worked must be >= 0.0");
+        if (hoursWorked < 0.0 || hoursWorked > 168.0) 
+            throw new IllegalArgumentException(
+                    "Hours worked must be between 0.0 and 168.0");
         this.hoursWorked = hoursWorked;
     }
     
