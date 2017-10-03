@@ -2,16 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/Users/mindy/Dropbox/Class/cmpsc221/sandbox/EmployeeWithComp/src/employee/Employee.java</file>
-            <file>file:/Users/mindy/Dropbox/Class/cmpsc221/sandbox/EmployeeWithComp/src/employee/CommissionedEmployee.java</file>
-            <file>file:/Users/mindy/Dropbox/Class/cmpsc221/sandbox/EmployeeWithComp/src/renumeration/Renumeration.java</file>
-            <file>file:/Users/mindy/Dropbox/Class/cmpsc221/sandbox/EmployeeWithComp/src/employee/SalariedEmployee.java</file>
-            <file>file:/Users/mindy/Dropbox/Class/cmpsc221/sandbox/EmployeeWithComp/src/renumeration/HourlyWage.java</file>
-            <file>file:/Users/mindy/Dropbox/Class/cmpsc221/sandbox/EmployeeWithComp/src/renumeration/Salary.java</file>
-            <file>file:/Users/mindy/Dropbox/Class/cmpsc221/sandbox/EmployeeWithComp/src/employee/BasePlusCommissionedEmployee.java</file>
-            <file>file:/Users/mindy/Dropbox/Class/cmpsc221/sandbox/EmployeeWithComp/src/employee/EmployeeTest.java</file>
-            <file>file:/Users/mindy/Dropbox/Class/cmpsc221/sandbox/EmployeeWithComp/src/employee/HourlyEmployee.java</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>
