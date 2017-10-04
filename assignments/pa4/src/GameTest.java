@@ -8,18 +8,14 @@ public class GameTest {
         GameModel gm = new GameModel();
         System.out.println("Start a new game model...");
         System.out.println(gm);
-        System.out.println();
 
         Scanner scanner = new Scanner(System.in);
-        int guess = 0;
-        while (guess >= 0) {
+        String guess;
+        while (!gm.isGameOver()) {
             System.out.println("Enter guess:");
-            guess = scanner.nextInt();
-            gm.setGuesses(guess);
-            String hint = gm.makeHint();
-            gm.setMessage(hint);
+            guess = scanner.nextLine();
+            gm.assessGuess(guess);
             System.out.println(gm);
         }
-
     }
 }

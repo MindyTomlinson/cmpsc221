@@ -1,11 +1,12 @@
 import java.awt.Color;
 import java.util.concurrent.ThreadLocalRandom;
+import java.util.zip.CheckedOutputStream;
 
 public class GameModel {
 
     private int currentGuess;
     private int previousGuess;
-    private int guessCount = 0;
+    private int guessCount;
     private int secretNumber;
     private String message;
     private Color color;
@@ -14,31 +15,57 @@ public class GameModel {
 
     public GameModel() {
         setSecretNumber();
+        guessCount = 0;
         message = String.format(
                 "I have a number between %d and %d. Can you guess my number?\n" +
                         "Please enter your first guess.", MIN_NUMBER, MAX_NUMBER);
         color = Color.LIGHT_GRAY;
     }
 
-    public int getCurrentGuess() {
-        return currentGuess;
+    public void assessGuess(String stringGuess) {
+        try {
+            // Parse string input into an integer
+            int guess = Integer.parseInt(stringGuess);
+
+            // Confirm guess is in range
+            if (guess < MIN_NUMBER || MAX_NUMBER < guess) {
+                throw new IllegalArgumentException();
+            }
+
+            // Move current guess to previous guess, etc.
+            setGuess(guess);
+
+            // Check if the game is over
+            if (isGameOver()) {
+                setMessage("Correct! Want to play again?");
+                setColor(Color.GREEN);
+            }
+
+            // If game isn't over yet...
+            else {
+                setColor(assessTemperature()); // Change color to reflect warmer/colder
+                setMessage(makeHint()); // Create a hint to display to the user
+            }
+        }
+
+        catch (NumberFormatException e) {
+            setMessage("Whoops, you didn't enter a number! Guess again.");
+        }
+
+        catch (IllegalArgumentException e) {
+            setMessage(String.format(
+                    "Whoops, you entered a number out of range. Guess a number between %d and %d.",
+                    MIN_NUMBER, MAX_NUMBER));
+        }
     }
 
-    public int getPreviousGuess() {
-        return previousGuess;
-    }
-
-    public void setGuesses(int guess) {
+    private void setGuess(int guess) {
         previousGuess = currentGuess;
         currentGuess = guess;
         guessCount += 1;
     }
 
-    public int getSecretNumber() {
-        return secretNumber;
-    }
-
-    public void setSecretNumber() {
+    private void setSecretNumber() {
         secretNumber = ThreadLocalRandom.current().nextInt(MIN_NUMBER, MAX_NUMBER + 1);
     }
 
@@ -46,7 +73,7 @@ public class GameModel {
         return message;
     }
 
-    public void setMessage(String message) {
+    private void setMessage(String message) {
         this.message = message;
     }
 
@@ -54,7 +81,7 @@ public class GameModel {
         return color;
     }
 
-    public void setColor(Color color) {
+    private void setColor(Color color) {
         this.color = color;
     }
 
@@ -62,29 +89,31 @@ public class GameModel {
         return currentGuess == secretNumber;
     }
 
-    // Utility methods
-
-    // Validate guess in range
-    private boolean guessInRange(int guess) {
-        return MIN_NUMBER <= guess && guess <= MAX_NUMBER;
-    }
-
-    // Calculate how close guess is to the secret number
-    private int distToSecret(int guess) {
-        return Math.abs(guess - secretNumber);
+    private Color assessTemperature() {
+        if ( Math.abs(currentGuess - secretNumber) < Math.abs(previousGuess - secretNumber) ) {
+            return Color.RED;
+        }
+        else {
+            return Color.BLUE;
+        }
     }
 
     // Construct hint to use in message
-    public String makeHint() {
+    private String makeHint() {
         String directionHint = currentGuess > secretNumber ? "Too high" : "Too low";
         String temperatureHint = "";
+        String prevGuessHint = "";
         if (guessCount > 1) { // If this isn't the 1st guess / there's a previous guess to compare to
-            temperatureHint =
-                    ( Math.abs(currentGuess - secretNumber) < Math.abs(previousGuess - secretNumber) ) ?
-                            ", but you're getting warmer!" : // currentGuess closer than previousGuess
-                            " and you're getting colder.";
+            if (assessTemperature() == Color.RED) {
+                temperatureHint = ", but you're getting warmer!";
+            }
+            if (assessTemperature() == Color.BLUE) {
+                temperatureHint = " and you're getting colder.";
+            }
+            prevGuessHint = String.format(" Your last two guesses: %d, %d.",
+                    previousGuess, currentGuess);
         }
-        return directionHint + temperatureHint;
+        return directionHint + temperatureHint + prevGuessHint;
     }
 
     @Override
@@ -95,7 +124,6 @@ public class GameModel {
                 "guessCount = " + guessCount + "\n" +
                 "secretNumber = " + secretNumber + "\n" +
                 "message = \'" + message + "\'\n" +
-                "color = " + color + "\n" +
-                "isGameOver = " + isGameOver() + "\n";
+                "color = " + color + "\n";
     }
 }
