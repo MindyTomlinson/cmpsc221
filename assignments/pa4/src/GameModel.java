@@ -94,7 +94,7 @@ public class GameModel {
             return Color.RED;
         }
         else {
-            return Color.BLUE;
+            return Color.CYAN;
         }
     }
 
@@ -107,7 +107,7 @@ public class GameModel {
             if (assessTemperature() == Color.RED) {
                 temperatureHint = ", but you're getting warmer!";
             }
-            if (assessTemperature() == Color.BLUE) {
+            if (assessTemperature() == Color.CYAN) {
                 temperatureHint = " and you're getting colder.";
             }
             prevGuessHint = String.format(" Your last two guesses: %d, %d.",
