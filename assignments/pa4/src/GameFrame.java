@@ -29,8 +29,8 @@ public class GameFrame extends JFrame {
     private final Color CORRECT_COLOR = new Color(55,220,148);
     private final Color DEFAULT_COLOR;
     private final String INITIAL_MESSAGE = String.format(
-            "I have a number between %d and %d. Can you guess my number?\n" +
-                    "Please enter your first guess.", MIN_NUMBER, MAX_NUMBER);
+            "I have a number between %d and %d. Can you guess my number? " +
+            "Please enter your first guess.", MIN_NUMBER, MAX_NUMBER);
 
     public GameFrame() {
 
