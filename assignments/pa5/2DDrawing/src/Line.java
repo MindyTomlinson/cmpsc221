@@ -1,19 +1,19 @@
-import java.awt.Color;
-import java.awt.Graphics;
+import java.awt.*;
+import java.awt.geom.Line2D;
 
 public class Line extends Shape {
 
-    public Line(int x1, int y1, int x2, int y2, Color color) {
-        super(x1, y1, x2, y2, color);
-    }
-
-    public Line() {
-        super();
+    public Line(Point startPoint, Point endPoint, Paint paint, BasicStroke stroke) {
+        setStartPoint(startPoint);
+        setEndPoint(endPoint);
+        setPaint(paint);
+        setStroke(stroke);
     }
 
     @Override
-    public void draw(Graphics g) {
-        g.setColor(getColor());
-        g.drawLine(getX1(), getY1(), getX2(), getY2());
+    public void draw(Graphics2D g2d) {
+        g2d.setPaint(getPaint());
+        g2d.setStroke(getStroke());
+        g2d.draw(new Line2D.Double(getStartPoint(), getEndPoint()));
     }
 }

@@ -1,19 +1,21 @@
-import java.awt.Color;
-import java.awt.Graphics;
+import java.awt.*;
+import java.awt.geom.Rectangle2D;
 
-public class Rectangle extends Shape {
+public class Rectangle extends BoundedShape {
 
-    public Rectangle(int x1, int y1, int x2, int y2, Color color) {
-        super(x1, y1, x2, y2, color);
-    }
-
-    public Rectangle() {
-        super();
+    public Rectangle(Point startPoint, Point endPoint, Paint paint, BasicStroke stroke, boolean filled) {
+        super(startPoint, endPoint, paint, stroke, filled);
     }
 
     @Override
-    public void draw(Graphics g) {
-        g.setColor(getColor());
-        g.fillRect(getX1(), getY1(), getWidth(), getHeight());
+    public void draw(Graphics2D g2d) {
+        g2d.setPaint(getPaint());
+        g2d.setStroke(getStroke());
+        if (isFilled()) {
+            g2d.fill(new Rectangle2D.Double(getTopX(), getTopY(), getWidth(), getHeight()));
+        }
+        else {
+            g2d.draw(new Rectangle2D.Double(getTopX(), getTopY(), getWidth(), getHeight()));
+        }
     }
 }

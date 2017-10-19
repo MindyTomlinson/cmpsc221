@@ -1,100 +1,71 @@
-import java.awt.Color;
-import java.awt.Graphics;
+import java.awt.*;
 
 public abstract class Shape {
 
-    private int x1;
-    private int y1;
-    private int x2;
-    private int y2;
-    private int width;
-    private int height;
-    private Color color;
+    private Point startPoint;
+    private Point endPoint;
+    private Paint paint;
+    private BasicStroke stroke;
+    public final static int LINE = 0;
+    public final static int RECTANGLE = 1;
+    public final static int OVAL = 2;
+    public final static String[] shapeNames = {"Line", "Rectangle", "Oval"};
 
-    // Shape will also need a Stroke object eventually (width, dashed, etc)
-    public Shape(int x1, int y1, int x2, int y2, Color color) {
-        this.x1 = x1;
-        this.y1 = y1;
-        this.x2 = x2;
-        this.y2 = y2;
-        this.color = color;
-        setHeight();
-        setWidth();
+    public abstract void draw(Graphics2D g2d);
+
+    public Point getStartPoint() {
+        return startPoint;
     }
 
-    public Shape() { // default constructor
-        this.x1 = 0;
-        this.y1 = 0;
-        this.x2 = 0;
-        this.y2 = 0;
-        this.color = Color.BLACK;
-        setHeight();
-        setWidth();
+    public void setStartPoint(Point startPoint) {
+        this.startPoint = startPoint;
     }
 
-    public int getX1() {
-        return x1;
+    public Point getEndPoint() {
+        return endPoint;
     }
 
-    public void setX1(int x1) {
-        this.x1 = x1;
-        setHeight();
-        setWidth();
+    public void setEndPoint(Point endPoint) {
+        this.endPoint = endPoint;
     }
 
-    public int getY1() {
-        return y1;
+    public Paint getPaint() {
+        return paint;
     }
 
-    public void setY1(int y1) {
-        this.y1 = y1;
-        setHeight();
-        setWidth();
+    public void setPaint(Paint paint) {
+        this.paint = paint;
     }
 
-    public int getX2() {
-        return x2;
+    public BasicStroke getStroke() {
+        return stroke;
     }
 
-    public void setX2(int x2) {
-        this.x2 = x2;
-        setHeight();
-        setWidth();
+    public void setStroke(BasicStroke stroke) {
+        this.stroke = stroke;
     }
 
-    public int getY2() {
-        return y2;
+    public double getTopX() {
+        return Math.min(startPoint.getX(), endPoint.getX());
     }
 
-    public void setY2(int y2) {
-        this.y2 = y2;
-        setHeight();
-        setWidth();
+    public double getTopY() {
+        return Math.min(startPoint.getY(), endPoint.getY());
     }
 
-    public int getWidth() {
-        return width;
+    public double getBottomX() {
+        return Math.max(startPoint.getX(), endPoint.getX());
     }
 
-    public void setHeight() {
-        this.height = (y2 - y1);
+    public double getBottomY() {
+        return Math.max(startPoint.getY(), endPoint.getY());
     }
 
-    public int getHeight() {
-        return height;
+    public double getWidth() {
+        return Math.abs(startPoint.getX() - endPoint.getX());
     }
 
-    public void setWidth() {
-        this.width = (x2 - x1);
+    public double getHeight() {
+        return Math.abs(startPoint.getY() - endPoint.getY());
     }
-
-    public Color getColor() {
-        return color;
-    }
-
-    public void setColor(Color color) {
-        this.color = color;
-    }
-
-    public abstract void draw(Graphics g);
 }
