@@ -233,7 +233,7 @@ public class DrawFrame extends JFrame {
         dashLength = (dashLength < 1.0f) ? 1.0f : dashLength;
         float[] dashes = {dashLength};
         BasicStroke stroke;
-        if (dashed) { 
+        if (dashed) {
             stroke = new BasicStroke(lineWidth, BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND,
                     10, dashes, 0);
         } else { // make a solid stroke
