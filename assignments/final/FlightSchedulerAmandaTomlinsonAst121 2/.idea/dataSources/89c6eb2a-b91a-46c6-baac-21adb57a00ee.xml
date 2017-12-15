@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="FlightSchedulerDBAmandaTomlinsonAst121@localhost">
+  <database-model serializer="dbm" rdbms="DERBY" format-version="4.4">
+    <root id="1"/>
+    <schema id="2" parent="1" name="APP"/>
+    <schema id="3" parent="1" name="JAVA">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="4" parent="1" name="NULLID"/>
+    <schema id="5" parent="1" name="SQLJ"/>
+    <schema id="6" parent="1" name="SYS"/>
+    <schema id="7" parent="1" name="SYSCAT"/>
+    <schema id="8" parent="1" name="SYSCS_DIAG"/>
+    <schema id="9" parent="1" name="SYSCS_UTIL"/>
+    <schema id="10" parent="1" name="SYSFUN"/>
+    <schema id="11" parent="1" name="SYSIBM"/>
+    <schema id="12" parent="1" name="SYSPROC"/>
+    <schema id="13" parent="1" name="SYSSTAT"/>
+    <table id="14" parent="3" name="BOOKINGS"/>
+    <table id="15" parent="3" name="CUSTOMERS"/>
+    <table id="16" parent="3" name="DAYS"/>
+    <table id="17" parent="3" name="FLIGHTS"/>
+    <column id="18" parent="14" name="CUSTOMERNAME">
+      <Position>1</Position>
+      <DataType>VARCHAR(100)|12</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="19" parent="14" name="FLIGHTNAME">
+      <Position>2</Position>
+      <DataType>VARCHAR(20)|12</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="20" parent="14" name="DAY">
+      <Position>3</Position>
+      <DataType>DATE(10)|91</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="21" parent="14" name="STATUS">
+      <Position>4</Position>
+      <DataType>INTEGER(10)|4</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="22" parent="14" name="POSITION">
+      <Position>5</Position>
+      <DataType>BIGINT(19)|-5</DataType>
+    </column>
+    <key id="23" parent="14" name="SQL171119203640950">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>CUSTOMERNAME
+FLIGHTNAME
+DAY</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="24" parent="15" name="NAME">
+      <Position>1</Position>
+      <DataType>VARCHAR(100)|12</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="25" parent="15" name="SQL171109173527240">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>NAME</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="26" parent="16" name="DATE">
+      <Position>1</Position>
+      <DataType>DATE(10)|91</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="27" parent="16" name="SQL171119172552770">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>DATE</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="28" parent="17" name="NAME">
+      <Position>1</Position>
+      <DataType>VARCHAR(20)|12</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="29" parent="17" name="SEATS">
+      <Position>2</Position>
+      <DataType>INTEGER(10)|4</DataType>
+    </column>
+    <key id="30" parent="17" name="SQL171107172713230">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>NAME</ColNames>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>
